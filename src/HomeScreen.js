@@ -19,9 +19,6 @@ function HomeScreen(props) {
   return (
     <React.Fragment>
 
-      <BrowserRouter>
-        <Switch>
-
           <div className="banner">
             <div className="overlay"></div>
             <div className="banner-content">
@@ -43,11 +40,6 @@ function HomeScreen(props) {
             </div>
           </div>
           <main> {props.children} </main>
-        </Switch>
-
-      </BrowserRouter>
-
-
     </React.Fragment>
   );
 }

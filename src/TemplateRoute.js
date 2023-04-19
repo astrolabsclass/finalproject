@@ -1,19 +1,24 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import HomeScreen from "./HomeScreen";
+import Header from "./Header";
+import Footer from "./Footer";
+
+
 
 function TemplateRoute(props) {
-  const { component: Component, ...rest } = props;
+
   return (
+    <React.Fragment>
+    <Header/>
     <Route
-      {...rest}
-      render={(routeProps) => (
-        <HomeScreen>
-          <Component {...routeProps} />
-        </HomeScreen>
-      )}
+    path={props.path}
+    exact= {props.exact}
+    component={props.component}
     />
-  );
-}
+    <Footer/>
+    </React.Fragment>
+      );}
+  
+
 
 export default TemplateRoute;

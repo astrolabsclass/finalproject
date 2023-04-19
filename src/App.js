@@ -7,40 +7,33 @@ import HomeScreen from './HomeScreen';
 import ContactScreen from './ContactScreen';
 import LoginScreen from './LoginScreen';
 import SignUpScreen from './SignUpScreen';
-import Header from './Header';
-import Footer from './Footer';
 import GridScreen from './GridScreen';
+import { Login } from '@mui/icons-material';
 
 
 function App() {
   return (
     <React.Fragment>
       <BrowserRouter>
-      <Header />
-      <Switch>
-        <Route path="/" exact={true}>
-          <HomeScreen />
-        </Route>
-        <Route path="/about">
-          <AboutScreen />
-        </Route>
-        <Route path="/contact">
-          <ContactScreen />
-        </Route>
-        <Route path="/login">
-          <LoginScreen />
-        </Route>
-        <Route path="/signup">
-          <SignUpScreen />
-        </Route>
-        <Route path='/directory'>
-          <GridScreen/>
-          
-        </Route>
-      </Switch>
-      <Footer />
-    </BrowserRouter>
-  
+
+        <Switch>
+          <TemplateRoute path="/" exact={true} component={HomeScreen} />
+
+          <TemplateRoute path="/about" exact={true} component={AboutScreen} />
+
+          <TemplateRoute path="/contact" exact={true} component={ContactScreen} />
+
+          <TemplateRoute path="/login" exact={true} component={LoginScreen} />
+
+          <TemplateRoute path="/signup" exact={true} component={SignUpScreen} />
+
+          <TemplateRoute path='/directory' exact={true} component={GridScreen} />
+
+
+        </Switch>
+
+      </BrowserRouter>
+
 
     </React.Fragment>
   );
